@@ -14,18 +14,63 @@
   
   	<!-- Linking Instafeed.js -->
   	<script type="text/javascript" src="instafeed.min.js"></script>
+
+  	<!-- Linking Google Fonts -->
+  	<link href='https://fonts.googleapis.com/css?family=Raleway:400,600,500,700,800,900' rel='stylesheet' type='text/css'>
   	
 </head>
 <body>
 
-	  <div onclick="kenya()">
-	  	<h1>Kenya</h1>
-	  </div>
+	<div id="content">
+		<div>
+			<h1>Follow the #refugeecrisis</h1>
+		</div>
 
-	  <div id="instafeed">
-	  </div>
+		<div id="map">
+			<div onclick="refugeesingermany()" id="refugeesingermany">
+				<div class="textonhover">
+					Refugees in Germany
+				</div>
+			</div>
+			<div onclick="kakumarefugeecamp()" id="kakumarefugeecamp">
+				<div class="textonhover">
+					Kakuma Refugee Camp
+				</div>
+			</div>
+			<div onclick="dadaabrefugeecamp()" id="dadaabrefugeecamp">
+				<div class="textonhover">
+					Dadaab Refugee Camp, Kenya
+				</div>
+			</div>
+			<div onclick="DFH()" id="DFH">
+				<div class="textonhover">
+					Danish Reugee Council, Denmark
+				</div>
+			</div>
+			<div onclick="syria()" id="syria">
+				<div class="textonhover">
+					Syrian refugees
+				</div>
+			</div>
+			<div onclick="kos()" id="kos">
+				<div class="textonhover">
+					Refugees in Kos, Greece
+				</div>
+			</div>
+			<div onclick="zaatari()" id="zaatari">
+				<div class="textonhover">
+					Al Zaatari Refugee Camp, Jordan
+				</div>
+			</div>
+		</div>
 
-	  <script type="text/javascript" src="script.js"></script>
+	</div>
+
+	<div id="instafeed">
+		<p>Click on the dots on the maps to see pictures from the location</p>
+	</div>
+
+	<script type="text/javascript" src="script.js"></script>
 
 </body>
 </html>

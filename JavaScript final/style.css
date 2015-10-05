@@ -1,17 +1,154 @@
 body {
-	background-color: #cecece;
+	font-family: 'Raleway', sans-serif;
+}
+
+/* Fonts */
+h1 {
+}
+
+/* Building blocks */
+#content {
+	width: 50%; 
+	float: left;
 }
 
 #instafeed {
-	background-color: #ffffff;
+	width: 50%;
+	float: left;
+	padding-top: 80px;
 }
 
-/*#clickText {
-	background-color: #ffffff;
+/* Map */
+#map {
+	width: 722px;
+	height: 851px;
+	background-image: url("worldmap.jpg");
 }
 
-#boxPictures {
-	background-color: #000000;
-	min-height: 100px;
-	min-width: 100px;
-}*/
+/* Dots on the map*/
+#dadaabrefugeecamp {
+	width: 7px;
+	height: 7px;
+	top: 646px;
+	left: 477px;
+	position: fixed;
+	background-color: #d62d4c;
+	z-index: 1;
+}
+
+#kakumarefugeecamp {
+	width: 7px;
+	height: 7px;
+	top: 616px;
+	left: 435px;
+	position: fixed;
+	background-color: #d62d4c;
+	z-index: 1;
+}
+
+#refugeesingermany {
+	width: 7px;
+	height: 7px;
+	top: 172px;
+	left: 222px;
+	position: fixed;
+	background-color: #d62d4c;
+	z-index: 1;
+}
+
+#DFH {
+	width: 7px;
+	height: 7px;
+	top: 124px;
+	left: 225px;
+	position: fixed;
+	background-color: #d62d4c;
+	z-index: 1;
+}
+
+#syria {
+	width: 7px;
+	height: 7px;
+	top: 340px;
+	left: 465px;
+	position: fixed;
+	background-color: #d62d4c;
+	z-index: 1;
+}
+
+#kos {
+	width: 7px;
+	height: 7px;
+	top: 322px;
+	left: 366px;
+	position: fixed;
+	background-color: #d62d4c;
+	z-index: 1;
+}
+
+#zaatari {
+	width: 7px;
+	height: 7px;
+	top: 370px;
+	left: 447px;
+	position: fixed;
+	background-color: #d62d4c;
+	z-index: 1;
+}
+
+/* Instafeed */
+#instafeed a {
+  padding: 5px 5px 1px 5px;
+  margin: 10px;
+  border: 1px solid #e1e1e1;
+  display: inline-block;
+  border-radius: 4px;
+  position: relative;
+}
+
+#instafeed .likes {
+  background: rgba(214,45,76,0.8);
+  font-family: sans-serif;
+  font-size: 1em;
+  position: absolute;
+  color: #ffffff;
+  right: 5px;
+  top: 5px;
+  left: 5px;
+  opacity: 0;
+  text-align: center;
+  line-height: 150px;
+  text-shadow: 0 1px rgba(0,0,0,0.5);
+  -webkit-font-smoothing: antialiased;
+  -webkit-transition: opacity 100ms ease;
+  -moz-transition: opacity 100ms ease;
+  -o-transition: opacity 100ms ease;
+  -ms-transition: opacity 100ms ease;
+  transition: opacity 100ms ease;
+}
+
+#instafeed a:hover .likes {
+  opacity: 1;
+}
+
+/* Hoverhalløj*/
+
+.textonhover {
+	display: none;
+	position: absolute;
+	z-index: 100;
+}
+
+#dadaabrefugeecamp:hover .textonhover, #kakumarefugeecamp:hover .textonhover, #refugeesingermany:hover .textonhover, #DFH:hover .textonhover, #syria:hover .textonhover, #kos:hover .textonhover, #zaatari:hover .textonhover {
+	display: block;
+	margin: 10px;
+	padding: 10px;
+	background-color: #d62d4c;
+	color: #ffffff;
+	font-size: 12px;
+	min-width: 180px;
+	position: absolute;
+	z-index: 100;
+}
+
+

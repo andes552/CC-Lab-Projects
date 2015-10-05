@@ -1,82 +1,5 @@
-
-/*$(document).ready(function(){
-
-var token = "203265594.1677ed0.5eed8a60856d4e7eaa55311e230f523e",
-    access_parameters = {
-        access_token: token
-};
-
-$("#clickText").click(function(event) {
-	console.log("Yay! Someone clicked on the text!");
-    if (event.which == 13) {
-        	event.preventDefault();
-        	var p = $("#clickText").id();
-        	if(p.length) {
-            	console.log(p);
-            	grabImages(p, 5, access_parameters);
-        	}
-    	}
-});
-
-function grabImages(kenya, count, access_parameters) {
-    var instagramUrl = 'https://api.instagram.com/v1/tags/' + tag + '/media/recent?callback=?&count=' + count;
-    $.getJSON(instagramUrl, access_parameters, onDataLoaded);
-}
-
-function onDataLoaded(instagram_data) {
-    var boxPictures = $("#boxPictures");
-    if (instagram_data.meta.code == 200) {
-        var photos = instagram_data.data;
-        if (photos.length > 0) {
-            boxPictures.empty();
-            for (var key in photos) {
-                var photo = photos[key];
-                boxPictures.append('<img src="' + photo.images.standard_resolution.url + '">')
-            }
-        } else {
-            console.log("no images with this tag!");
-        }
-    } else {
-        var error = instagram_data.meta.error_message;
-        console.log(error);
-    }
-}
-
-});
-*/
-
-// Instafeed.js code
-/*
-var feed = new Instafeed({
-	get: 'tagged',
-	tagName: 'dadaab',
-	clientId: '30b0164c057b4e798cd3948965310b87'
-});
-
-
-feed.run();
-*/
-/*
-$("#clickText").click(function(event) {
-    console.log("Yay! Someone clicked on the text!");
-    if (event.which == 13) {
-            event.preventDefault();
-            var p = $("#clickText").id();
-            if(p.length) {
-                console.log(p);
-                grabImages(p, 5, access_parameters);
-            }
-        }
-});
-
-// run each instance
-for(var i=0, len=myTags.length; i < len; i++) {
-    myTags[i].run();
-}
-*/
-
 // Get multiple tags
-var myTags = getMultipleTags(['kenya', 'jordan', 'ethiopia']);
+var myTags = getMultipleTags(['dadaabrefugeecamp', 'kakumarefugeecamp', 'refugeesingermany', 'danskflygtningehjælp', 'syrianrefugees', 'kosrefugees', 'zaatari']);
 
 function getMultipleTags (tags) {
     console.log("The function getMultipleTags was executed");
@@ -85,13 +8,67 @@ function getMultipleTags (tags) {
         feeds.push(new Instafeed({
             get: 'tagged',
             tagName: tags[i],
-            clientId: '30b0164c057b4e798cd3948965310b87'
+            limit: 20,
+            sortBy: 'most-liked',
+            clientId: '30b0164c057b4e798cd3948965310b87',
+            after: function () {
+                var images = $("#instafeed").find('a');
+                $.each(images, function(index, image) {
+                var delay = (index * 75) + 'ms';
+                $(image).css('-webkit-animation-delay', delay);
+                $(image).css('-moz-animation-delay', delay);
+                $(image).css('-ms-animation-delay', delay);
+                $(image).css('-o-animation-delay', delay);
+                $(image).css('animation-delay', delay);
+                $(image).addClass('animated flipInX');
+            });
+    },
+  template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="likes">&hearts; {{likes}}</div></a>'
         }));
     }
     return feeds;
 }
 
-function kenya(){
-    console.log("The function Kenya was executed");
+var div = document.getElementById('instafeed');
+
+function dadaabrefugeecamp(){
+    document.getElementById("instafeed").innerHTML = '';
+    console.log("The function dadaabrefugeecamp was executed");
     myTags[0].run();
+}
+
+function kakumarefugeecamp(){
+    document.getElementById("instafeed").innerHTML = '';
+    console.log("The function kakumarefugeecamp was executed");
+    myTags[1].run();
+}
+
+function refugeesingermany(){
+    document.getElementById("instafeed").innerHTML = '';
+    console.log("The function refugeesingermany was executed");
+    myTags[2].run();
+}
+
+function DFH(){
+    document.getElementById("instafeed").innerHTML = '';
+    console.log("The function DFH was executed");
+    myTags[3].run();
+}
+
+function syria(){
+    document.getElementById("instafeed").innerHTML = '';
+    console.log("The function Syria was executed");
+    myTags[4].run();
+}
+
+function kos(){
+    document.getElementById("instafeed").innerHTML = '';
+    console.log("The function kos was executed");
+    myTags[5].run();
+}
+
+function zaatari(){
+    document.getElementById("instafeed").innerHTML = '';
+    console.log("The function Zaatari was executed");
+    myTags[6].run();
 }
